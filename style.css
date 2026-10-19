@@ -1,0 +1,30 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+body{
+  font-family: helvetica;
+  font-size: 16px;
+  line-height: 22px;
+  color: black;
+  background-color: red;
+}
+
+.ancho{
+  margin: auto;
+  width: 1200px;
+}
+
+.centro{
+  text-align: center;
+}
+
+.negritas{
+  font-weight: bold;
+}
+
+.margen{
+  padding: 15px;
+}
