@@ -1,4 +1,5 @@
-Tarea x
-Autor: Abdiel Antonio Magaña Ayala
+Formulario con validación usando JQuery
+validación del nombre, email, y otros campos marcados como obligatorios
 
-Materia: Programcion web
+
+Autor: Abdiel Antonio Magaña Ayala
