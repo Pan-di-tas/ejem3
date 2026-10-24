@@ -6,13 +6,93 @@
   <title>Maquetacion x</title>
   <meta name="description" content="Maquetacion con javascript">
   <link rel="stylesheet" href="style.css">
+  <script src="https://code.jquery.com/jquery-4.0.0.js"></script>
 </head>
 <body>
-  <div>
-    <h1>Hola</h1>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit debitis in assumenda labore quisquam cum, maxime dolor aliquam ut magnam iure facere inventore ipsum delectus id adipisci dolores ratione eveniet.
-    </p>
+  <div class="ancho margen">
+    <h1 class="centro">Validacion de elementos de formulario</h1>
+    <br>
+    <div class="cont_formulario">
+      <form action="" class="formulario" name="formulariovalidacion" method="get">
+      <h2>DATOS ALUMNOS:</h2>
+      <br>
+      <input class="form" type="text" placeholder="Escribe tu nombre" id="nombrecompleto">
+      <br>
+      <br>
+      <input class="form" type="email" placeholder="Escribe tu email" id="email">
+      <br><br><br>
+      <h2>ACTIVIDADES EXTRAESCOLARES:</h2>
+      <br>
+      <input class="chec" type="checkbox" id="content1"><label for="content1">Deporte no se que</label>
+      <br>
+      <input class="chec" type="checkbox" id="content2"><label for="content2">Click aqui</label>
+      <br>
+      <input class="chec" type="checkbox" id="content3"><label for="content3">Captura de pantalla</label>
+      <br>
+      <br>
+      <br>
+      <h2>DOMINIO DEL IDIOMA INGLES:</h2>
+      <br>
+      <input class="radi" type="radio" name="ingles"><label for="">Avanzado</label>
+      <br>
+      <input class="radi" type="radio" name="ingles"><label for="">Intermedio</label>
+      <br>
+      <input class="radi" type="radio" name="ingles"><label for="">Basico</label>
+      <br>
+      <br><br>
+      <h2>UNIDADES:</h2>
+      <br>
+      <select name="" id="unidades">
+        <option value="">Escoge tus materias</option>
+        <option value="unidad 1">Matematicas</option>
+        <option value="unidad 2">Fisica</option>
+        <option value="unidad 3">Quimica</option>
+        <option value="unidad 4">Geografia</option>
+      </select>
+      <br><br><br>
+      <button class="btn_enviar" type="button" id="btn_validar">Enviar</button>
+    </form>
+    </div>
   </div>
   
+  <!-- funciones jquery -->
+<script>
+  $('#btn_validar').click(function() {
+    if ($('#nombrecompleto').val().trim() == '') {
+      alert("No escribiste tu nombre ");
+      $('#nombrecompleto').focus()
+      return 0;
+    }
+
+    if ($('#email').val().trim() == '') {
+      alert("No escribiste tu email ");
+      $('#email').focus();
+      return 0;
+    }
+
+    let expCorre = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (!expCorre.test($("#email").val().trim())){
+      alert("Escribe un email valido");
+      return 0;
+    }
+
+    if (!$(".chec").is(":checked")){
+      alert("Seleccion al menos una opcion");
+      $(".chec").first().focus();
+      return 0;
+    }
+
+    if ($('#unidades').val() == ''){
+      alert("Debes seleccionar una unidad");
+      $('#unidades').focus();
+      return false;
+    }
+
+    else{
+      document.formulariovalidacion.submit();
+    }
+  });
+</script>
 </body>
 </html>

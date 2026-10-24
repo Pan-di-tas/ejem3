@@ -9,12 +9,11 @@ body{
   font-size: 16px;
   line-height: 22px;
   color: black;
-  background-color: red;
 }
 
 .ancho{
   margin: auto;
-  width: 1200px;
+  max-width: 1200px;
 }
 
 .centro{
@@ -27,4 +26,43 @@ body{
 
 .margen{
   padding: 15px;
+}
+
+h1{
+  padding: 20px;
+  background-color: #f2f2f2;
+  border-radius: 20px;
+  border: 1px #f1f1f1 solid;
+  text-transform: uppercase;
+}
+
+.cont_formulario{
+  text-align: left;
+  border: 3px #f1f1f1 solid;
+  border-radius: 20px;
+  width: 100%;
+  padding: 20px;
+}
+
+.formulario input[type="text"], .formulario input[type="email"], .formulario select{
+  width: 90%;
+  padding: 5px;
+}
+
+.btn_enviar{
+  background-color: #800000;
+  color: #f2f2f2;
+  padding: 10px 20px;
+}
+
+.form:focus{
+  background-color: #e1f3f7;
+}
+
+.chec:focus{
+  outline: 3px blue solid;
+  outline-offset: 4px; 
+}
+label{
+  padding-left: 15px;
 }
